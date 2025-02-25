@@ -45,6 +45,13 @@ print(np.vstack(
 
 print('-'*80)
 
+a1 = np.array([1,2], dtype=np.uint8)
+a2 = np.array([2,3], dtype=np.uint64)
+a3 = np.array([4,5], dtype=np.int32)
+result = np.vstack([a1, a2, a3])
+print(result)
+print(result.dtype)
+print('-'*80)
 
 
 
