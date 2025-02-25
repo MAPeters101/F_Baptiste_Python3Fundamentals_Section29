@@ -71,6 +71,14 @@ print()
 
 np.random.seed(0)
 print(np.random.randint(1,10,50))
+print('-'*80)
 
+from numpy import random as npr
+npr.seed(0)
+print(npr.randint(1,6+1,10))
+npr.seed(0)
+print(npr.randint(1,7,(10,2)))
+npr.seed(0)
+print(npr.randint(1,7,(10,5)))
 
 
