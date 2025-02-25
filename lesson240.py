@@ -35,5 +35,18 @@ print(result.dtype)
 print('-'*80)
 
 
+print(np.vstack(
+    (
+        np.arange(5),
+        np.linspace(0,1,5),
+        np.eye(5)
+    )
+))
+
+print('-'*80)
+
+
+
+
 
 
