@@ -53,7 +53,13 @@ print(result)
 print(result.dtype)
 print('-'*80)
 
-
+print(a1)
+print(a1.dtype)
+c1 = a1.astype(np.float32)
+print(a1)
+print(a1.dtype)
+print(c1)
+print(c1.dtype)
 
 
 
