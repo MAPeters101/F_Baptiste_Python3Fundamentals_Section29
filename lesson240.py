@@ -73,4 +73,19 @@ print(result)
 print(result.dtype)
 print('-'*80)
 
-
+a1 = np.array([1,2,3,4])
+a2 = np.array([10,20,30,40])
+result = np.vstack((a1, a2))
+print(a1)
+print(a2)
+print()
+print(result)
+print('='*80)
+print()
+a1[0] = 100
+result[0][1] = 2000
+print(a1)
+print(a2)
+print()
+print(result)
+print()
