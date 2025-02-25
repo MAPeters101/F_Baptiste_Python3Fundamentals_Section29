@@ -60,6 +60,17 @@ print(a1)
 print(a1.dtype)
 print(c1)
 print(c1.dtype)
+print('-'*80)
 
+result = np.vstack(
+    (
+        a1.astype(np.int64),
+        a2.astype(int),
+        a3.astype(np.int64)
+    )
+)
+print(result)
+print(result.dtype)
+print('-'*80)
 
 
