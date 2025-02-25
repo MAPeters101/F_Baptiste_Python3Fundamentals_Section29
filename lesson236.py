@@ -56,4 +56,21 @@ x_coords = np.linspace(-2*math.pi, 2*math.pi, 50)
 print(x_coords)
 y_values = np.array([math.sin(x) for x in x_coords])
 print(y_values)
+print('-'*80)
+
+
+print(np.random.random(5))
+np.random.seed(0)
+print(np.random.random(5))
+np.random.seed(0)
+print(np.random.random(5))
 print()
+
+print(np.random.random((5,3)))
+print()
+
+np.random.seed(0)
+print(np.random.randint(1,10,50))
+
+
+
