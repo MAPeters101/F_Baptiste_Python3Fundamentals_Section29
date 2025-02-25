@@ -66,6 +66,6 @@ print(arr2)
 print(m)
 print('-'*80)
 
-
+print(np.arange(1,11).reshape(5,2))
 
 
