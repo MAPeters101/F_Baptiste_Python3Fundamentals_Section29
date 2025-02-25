@@ -23,6 +23,15 @@ print(arr)
 print(m1)
 print(m2)
 print(m3)
+print('-'*80)
+
+m1[3][2] = 200
+print(arr)
+print(m1)
+print(m2)
+print(m3)
+print('-'*80)
+
 
 
 
