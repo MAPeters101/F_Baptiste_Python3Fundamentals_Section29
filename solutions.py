@@ -1,8 +1,10 @@
 '''
 Question 1
-The accompanying file data.csv contains information for the value x of something observed at time t.
+The accompanying file data.csv contains information for the value x of
+something observed at time t.
 
-Given this data, we want to calculate the rate of change of this value over time - we'll do this by taking two consecutive observations, say
+Given this data, we want to calculate the rate of change of this value over
+time - we'll do this by taking two consecutive observations, say
  and
  and approximate the rate of change using this formula:
 
@@ -29,7 +31,9 @@ Similarly,
 
 
 
-Use NumPy arrays to create an array that holds the calculated rates of change and determine the minimum, maximum, average and standard deviation of the rate of change.
+Use NumPy arrays to create an array that holds the calculated rates of change
+and determine the minimum, maximum, average and standard deviation of the rate
+of change.
 
 Solution
 import numpy as np
@@ -350,7 +354,8 @@ array([[9.20000000e-02, 1.47656750e+01],
        [9.79600000e+00, 5.00089664e+02],
        [9.90000000e+00, 5.04174303e+02],
        [9.99200000e+00, 5.08754508e+02]])
-Now that we have our data in a NumPy array, we can calculate the differences in the t values and the x values this way:
+Now that we have our data in a NumPy array, we can calculate the differences
+in the t values and the x values this way:
 
 delta_t = data[1:, 0] - data[:-1, 0]
 delta_t
@@ -411,7 +416,8 @@ array([50.86622176, 51.94935197, 35.59144075, 67.22995203, 39.1007292 ,
        56.09133197, 55.94782583, 45.58653809, 49.73481794, 57.6411351 ,
        38.76811244, 59.92315629, 29.42739859, 50.63091397, 63.78470051,
        51.82203065, 45.13509308, 39.27537735, 49.784833  ])
-Of course, we could just do all this in one step as well since we want to perform the same difference calculations on each column:
+Of course, we could just do all this in one step as well since we want to
+perform the same difference calculations on each column:
 
 delta = data[1:] - data[:-1]
 delta
@@ -549,12 +555,15 @@ np.mean(rates)
 np.std(rates)
 9.043463532187504
 Question 2
-In linear regression we try to find the coefficients m (slope) and c (y-intercept) of a straight line
+In linear regression we try to find the coefficients m (slope) and c
+(y-intercept) of a straight line
 
 
-that provides the "best" fit given some x and y data. This formula then allows to predict y values for given x values.
+that provides the "best" fit given some x and y data. This formula then allows
+to predict y values for given x values.
 
-Given an array of n (x, y) data pairs, these coefficients can be calculated very simply.
+Given an array of n (x, y) data pairs, these coefficients can be calculated
+very simply.
 
 A bit of terminology first:
 
@@ -566,9 +575,11 @@ Then, given some column (say X), this symbol:
  means the sum of all the elements in the column.
 
 Similarly, the symbol
- means the sum of the values obtained by multiplying (pairwise) the values in X and Y.
+ means the sum of the values obtained by multiplying (pairwise) the values in
+ X and Y.
 
-Given those definitions, the formulas for calculating the "best" values of m and c are given by:
+Given those definitions, the formulas for calculating the "best" values of m
+and c are given by:
 
 
 
@@ -576,18 +587,23 @@ Given those definitions, the formulas for calculating the "best" values of m and
 
 (where n is the number of (x,y) pairs in our data set.)
 
-Using the same data we saw in Question 1, calculate the values for m and c for that data set given the formulas above.
+Using the same data we saw in Question 1, calculate the values for m and c for
+that data set given the formulas above.
 
-You can think of the t column in the data as the X column, and the x values in the data as the Y column - we are trying to predict the value of x given a value of t.
+You can think of the t column in the data as the X column, and the x values in
+the data as the Y column - we are trying to predict the value of x given a
+value of t.
 
 This will result in a straight line that "best" fits through the data.
 
-Compare the slope of this regression line to the average rate of change you calculated in Question 1.
+Compare the slope of this regression line to the average rate of change you
+calculated in Question 1.
 
 Solution
 We already saw how to load the data in Question 1.
 
-I'll do the import, conversion to floats, and loading up into a NumPy array in the same step to simplify our earlier code a bit.
+I'll do the import, conversion to floats, and loading up into a NumPy array in
+the same step to simplify our earlier code a bit.
 
 import numpy as np
 import csv
@@ -699,7 +715,8 @@ array([[9.20000000e-02, 1.47656750e+01],
        [9.79600000e+00, 5.00089664e+02],
        [9.90000000e+00, 5.04174303e+02],
        [9.99200000e+00, 5.08754508e+02]])
-So here, the X column is the first column (the time column), and the Y column is the second column (the observed value column).
+So here, the X column is the first column (the time column), and the Y column
+is the second column (the observed value column).
 
 We can certainly assign those individual columns to variable names:
 
@@ -723,7 +740,8 @@ c
 So the "best" straight line through our data is given by:
 
 
-If we compare our value for m here: 49.978, we'll see that it is very close to the average rate of change we calculated in Question 1: 49.981.
+If we compare our value for m here: 49.978, we'll see that it is very close to
+the average rate of change we calculated in Question 1: 49.981.
 
 (I won't get into the math here, but if
 , then the rate of change of
